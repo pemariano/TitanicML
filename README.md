@@ -56,7 +56,40 @@ Check the notebook for the tables with these data.
 
 ### 2. Now it's time for data preprocessing
 
+- As seen in the NaN values we need to fill the values for Age. Check if age has a correlation with sex grouping by sex and age. It does not.
+- Remembering the heatmap we see that the greatest correlation for Age is Pclass, 0.41. So we fill the missing values with the mean of Age for each Pclass. We do that by grouping Pclass and Age.
+- We also normalize the fare column by the Z-score
+- Family size could be a good feature instead of separated SibSp and Parch. Create a new column in the dataframe with the family size, SibSp + Parch.
 
+##
 
+### 3. Logistic Regression with TensorFlow and Sklearn
 
+1. We need to create the # creates the feature layer. Divide the feature into it's classes:
+- Numerical features: Fare
+- Bucketized features: Age, FamilySize with intervals (10,2)
+- Categorical features: Sex, Pclass
+
+2. Create the feature columns and joins them in a Layer.
+
+3. Create a model with Keras from TensorFlow. 
+The model has the feature layer and in the second layer pass the regression value trough a sigmoid activation.
+
+4. Train the model
+
+5. Tune the hyperparameters
+
+6. Define the metrics we will use to evaluate:
+- accuracy
+- precision
+- recall
+- AUC
+
+By the end we have the result of training:
+#### loss: 0.6274 - accuracy: 0.7899 - precision: 0.9429 - recall: 0.4825 - auc: 0.8028
+![image](https://github.com/pemariano/TitanicML/assets/85647121/94fe247d-4775-4429-aba1-fe6e77ce4696)
+
+Which seem to be good. Great precision and AUC. An Ok accuracy. 
+
+We evaluate the model against the test set resulting in the predictions at `TitanicPredictionsLogisticTF.csv`
 
