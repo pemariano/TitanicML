@@ -1,6 +1,6 @@
 # TitanicML
 ### Titanic predictions with Machine Learning Logistic Regression for classification with TensorFlow and Sklearn. Including data treatment.
-Exploring the Kaggle Titanic Dataset.
+Exploring the Kaggle Titanic Dataset to predict passengers survival.
 
 ##
 
@@ -80,16 +80,22 @@ The model has the feature layer and in the second layer pass the regression valu
 5. Tune the hyperparameters
 
 6. Define the metrics we will use to evaluate:
-- accuracy
-- precision
-- recall
-- AUC
+- Accuracy: Fraction of predictions the model got right. (No. of right predictions)/(Total no. of predictions). It works well when you *don't have a class-imbalanced data set*. We don't as already commented.
+- Precision: Taking only the positive identifications of the model, how many where right? (No. True positives)/(True Postives + False Negatives). The problem is that a model that produces no False Positives has a precision of 1. *A model that predicts very few positive identifications tends to have a great precision, that doesn't mean it's a good model*. It works well for certain cases like when you can't get a true identification wrong.  
+- Recall: What proportion of actual positives values was identified correctly? From the people that survived, how many we got right? The problem is that *if your model says everyone survived it has a recall of 1*.
+- Precision and Recall are often in tension. That is, improving precision typically reduces recall and vice versa. The idela is to equilibrate the two.You can improve more one than other depending on your problem.
+- AUC: Is classification-threshold-invariant. It measures the quality of the model's predictions irrespective of what classification threshold is chosen. Evaluates the model by it's own. In cases where you have disparities in the cost of false negatives vs. false positives, it may be critical to minimize one type of classification error. Where you have to prioritize Precision or Recall sacrificing the other for example.
 
+  
 By the end we have the result of training:
 #### loss: 0.6274 - accuracy: 0.7899 - precision: 0.9429 - recall: 0.4825 - auc: 0.8028
 ![image](https://github.com/pemariano/TitanicML/assets/85647121/94fe247d-4775-4429-aba1-fe6e77ce4696)
 
-Which seem to be good. Great precision and AUC. An Ok accuracy. 
+A medium accuracy, gets 79% of the predictions right.
+Great precision, when the model say a person survived it generally are right.
+Bad recall, only gets right about half the people that actually survived. (this indicates that the classification threshold could be lower).
+Good AUC, the model seems alright but could improve.
+
 
 We evaluate the model against the test set resulting in the predictions at `TitanicPredictionsLogisticTF.csv`
 
