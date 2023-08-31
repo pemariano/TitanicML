@@ -66,9 +66,9 @@ Check the notebook for the tables with these data.
 ### 3. Logistic Regression with TensorFlow and Sklearn
 
 1. We need to create the # creates the feature layer. Divide the feature into it's classes:
-- Numerical features: Fare
-- Bucketized features: Age, FamilySize with intervals (10,2)
-- Categorical features: Sex, Pclass
+- Numerical features: Fare.
+- Bucketized features: Age, FamilySize. With intervals (10,2) repectively.
+- Categorical features: Sex, Pclass.
 
 2. Create the feature columns and joins them in a Layer.
 
@@ -91,10 +91,10 @@ By the end we have the result of training:
 #### loss: 0.6274 - accuracy: 0.7899 - precision: 0.9429 - recall: 0.4825 - auc: 0.8028
 ![image](https://github.com/pemariano/TitanicML/assets/85647121/94fe247d-4775-4429-aba1-fe6e77ce4696)
 
-A medium accuracy, gets 79% of the predictions right.
-Great precision, when the model say a person survived it generally are right.
-Bad recall, only gets right about half the people that actually survived. (this indicates that the classification threshold could be lower).
-Good AUC, the model seems alright but could improve.
+A medium accuracy, gets 79% of the predictions right. \
+Great precision, when the model say a person survived it generally are right. \
+Bad recall, only gets right about half the people that actually survived. (this indicates that the classification threshold could be lower). \
+Good AUC, the model seems alright but could improve. \
 
 
 We evaluate the model against the test set resulting in the predictions at `TitanicPredictionsLogisticTF.csv`
