@@ -34,13 +34,13 @@ Data Dictionary *from kaggle*
 - Cabin could be a good column to use as a feature but 186 unique cabins of only 295 values, can't categorize much. 
 
 #### From the Seaborn .pairplot() with distinction between survived values:
-![Untitled](https://github.com/pemariano/TitanicML/assets/85647121/239eb257-3444-4998-a05e-cb1f07f6858f)
+![pairplot](https://github.com/pemariano/TitanicML/assets/85647121/239eb257-3444-4998-a05e-cb1f07f6858f)
 - Most people from the Pclass=3 died than lived, in Pclass=1,2 the number is alike.
 - High (4 or more) SibSp or Parch seems to have died more.
 - None of the other distributions seem to indicate a clear line between the people that survived and those who didn't. In other words, do not show trends of people who survived in function of the features (or a relantionship between features and survived).
 
 #### We can also check correlations with Seaborn .heatmap():
-![image](https://github.com/pemariano/TitanicML/assets/85647121/249c4c71-ab3e-40ae-8b03-4a4b6f4a4590)
+![correlations](https://github.com/pemariano/TitanicML/assets/85647121/12021856-c9eb-415c-b277-c776139d9326)
 - We dont have much correlation in the dataset, the most useful one is the 0.34 in Survived x Pclass and it's not great.
 
 
@@ -90,7 +90,8 @@ The model has the feature layer and in the second layer pass the regression valu
   
 By the end we have the result of training:
 #### loss: 0.6274 - accuracy: 0.7899 - precision: 0.9429 - recall: 0.4825 - auc: 0.8028
-![image](https://github.com/pemariano/TitanicML/assets/85647121/94fe247d-4775-4429-aba1-fe6e77ce4696)
+![accuracy_graph](https://github.com/pemariano/TitanicML/assets/85647121/74629c0f-649e-4073-b8b2-b4e501e85312)
+
 
 A medium accuracy, gets 79% of the predictions right. \
 Great precision, when the model say a person survived it generally are right. \
