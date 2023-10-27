@@ -128,11 +128,16 @@ After submitting to Kaggle these predictions get an Score of 0.78468 an ended up
 
 ##
 
-### 6. Results
+### 6. Results and Conclusions
 
 - Logistic Regression (with 5 most important columns) - Score: 0.54545
 - Random Forests (with all 13 columns) - Score: 0.78468
 - Gradient Boosted Trees (with all 13 columns) - Score: 0.78708
 
-This seems to indicate that both the model and the available data influence in the results. GBT and RF did not present very different results.
+This seems to indicate that both the model and the available data influence in the results. RF and GBT did not present very different results.
 The EDA to minimize the computational cost indicated the 5 most important columns, but using only that data didn't show good results on the Logistic Regression Model. This indicates that one should only use restricted data if using all the data is impossible or very costly.
+
+Next steps would be using Logistic Regression with all 13 columns and RF and GBT with only 5 columns to see the differences. \
+Change the models parameters to fine tune them and see if it is possible to get better results with that. \
+See the time each model took to train and predict and compare that time with 5 and 13 columns of data. \
+Split the train set between train and validation sets to see if it is possible to get better results with that. \
