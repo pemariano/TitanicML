@@ -1,5 +1,5 @@
 # TitanicML
-### Titanic predictions with Machine Learning Logistic Regression for classification with TensorFlow and Sklearn. Including data treatment.
+### Titanic predictions with Machine Learning comparing Logistic Regression, Random Forests and Gradient Boosted Trees from TensorFlow. Including data treatment and exploratory data analysis.
 Exploring the Kaggle Titanic Dataset to predict passengers survival.
 
 ##
@@ -64,7 +64,7 @@ Check the notebook for the tables with these data.
 
 ##
 
-### 3. Logistic Regression with TensorFlow and Sklearn
+### 3. Logistic Regression with TensorFlow
 
 1. We need to create the # creates the feature layer. Divide the feature into it's classes:
 - Numerical features: Fare.
@@ -88,8 +88,8 @@ The model has the feature layer and in the second layer pass the regression valu
 - AUC: Is classification-threshold-invariant. It measures the quality of the model's predictions irrespective of what classification threshold is chosen. Evaluates the model by it's own. In cases where you have disparities in the cost of false negatives vs. false positives, it may be critical to minimize one type of classification error. Where you have to prioritize Precision or Recall sacrificing the other for example.
 
   
-By the end we have the result of training:
-#### loss: 0.6274 - accuracy: 0.7899 - precision: 0.9429 - recall: 0.4825 - auc: 0.8028
+By the end we have the result of training: \
+loss: 0.6274 - accuracy: 0.7899 - precision: 0.9429 - recall: 0.4825 - auc: 0.8028 \
 ![accuracy_graph](https://github.com/pemariano/TitanicML/assets/85647121/74629c0f-649e-4073-b8b2-b4e501e85312)
 
 
@@ -98,6 +98,41 @@ Great precision, when the model say a person survived it generally are right. \
 Bad recall, only gets right about half the people that actually survived. (this indicates that the classification threshold could be lower). \
 Good AUC, the model seems alright but could improve. \
 
+After submitting to Kaggle these predictions get an Score of 0.54545
 
-We evaluate the model against the test set resulting in the predictions at `TitanicPredictionsLogisticTF.csv`
+##
 
+### 4. Random Forest with TensorFlow
+
+Logloss and accuracy graph: \
+![Screenshot 2023-10-27 at 08-12-21 Titanic dataset Kaggle](https://github.com/pemariano/TitanicML/assets/85647121/ec52bc23-2b1b-4121-9da2-75c5dc0466fb)
+
+- This model ended up with number of trees equal to 300, accuracy = 0.830337, logloss = 0.534503. It could be downgraded to about 150 trees where after that number the logloss and the accuracy doesn't change much.
+- This model used all the 13 columns of data.
+
+After submitting to Kaggle these predictions get an Score of 0.78708
+
+##
+
+### 5. Gradient Boosted Trees with TensorFlow
+
+Logloss and accuracy graph: \
+![Screenshot 2023-10-27 at 08-23-44 Titanic dataset Kaggle](https://github.com/pemariano/TitanicML/assets/85647121/99d677f7-d444-41a8-b9cc-087bcce38f63)
+it seems to have an overfitting at 20 trees. The accuracy doesn't change much after that as well
+
+- This model ended up with number of trees equal to 23, valid-loss = 0.691526, valid accuracy = 0.835616.
+- This shows that in fact it doesn't make sense to use more than 20 and so trees as i mentioned after the Logloss graph.
+- This model used all the 13 columns of data.
+
+After submitting to Kaggle these predictions get an Score of 0.78468 an ended up in place 1602 of 15192 people.
+
+##
+
+### 6. Results
+
+- Logistic Regression (with 5 most important columns) - Score: 0.54545
+- Random Forests (with all 13 columns) - Score: 0.78468
+- Gradient Boosted Trees (with all 13 columns) - Score: 0.78708
+
+This seems to indicate that both the model and the available data influence in the results. GBT and RF did not present very different results.
+The EDA to minimize the computational cost indicated the 5 most important columns, but using only that data didn't show good results on the Logistic Regression Model. This indicates that one should only use restricted data if using all the data is impossible or very costly.
