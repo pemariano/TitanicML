@@ -1,10 +1,25 @@
 # TitanicML
-### Titanic predictions with Machine Learning comparing Logistic Regression, Random Forests and Gradient Boosted Trees from TensorFlow. Including data treatment and exploratory data analysis.
+
+Titanic predictions with Machine Learning comparing Logistic Regression, Random Forests and Gradient Boosted Trees from TensorFlow. Including data treatment and exploratory data analysis.
+
 Exploring the Kaggle Titanic Dataset to predict passengers survival.
 
 ##
 
-### 1. The notebook starts with Exploratory Data Analysis (EDA) where we can visualize the data, found possible errors in it, missing values, look for hints for the better features, and more. 
+### Summary
+
+1. [EDA](###-1.-the-notebook-starts-with-exploratory-data-analysis-(eda))
+2. Data Preprocessing
+3. Logistic Regression
+4. Random Forest
+5. Gradient Boosted Trees
+6. Results and Conclusions
+
+##
+
+### 1. The notebook starts with Exploratory Data Analysis (EDA) 
+
+In EDA we can visualize the data, found possible errors in it, missing values, look for hints for the better features, and more. 
 
 Data Dictionary *from kaggle*
 
@@ -141,3 +156,5 @@ Next steps would be using Logistic Regression with all 13 columns and RF and GBT
 Change the models parameters to fine tune them and see if it is possible to get better results with that. \
 See the time each model took to train and predict and compare that time with 5 and 13 columns of data. \
 Split the train set between train and validation sets to see if it is possible to get better results with that. \
+
+
