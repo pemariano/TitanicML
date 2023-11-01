@@ -8,12 +8,12 @@ Exploring the Kaggle Titanic Dataset to predict passengers survival.
 
 ### Summary
 
-1. [EDA](###-1.-the-notebook-starts-with-exploratory-data-analysis-(eda))
-2. Data Preprocessing
-3. Logistic Regression
-4. Random Forest
-5. Gradient Boosted Trees
-6. Results and Conclusions
+1. [EDA](#1-the-notebook-starts-with-exploratory-data-analysis-eda)
+2. [Data Preprocessing](#2-now-it's-time-for-data-preprocessing)
+3. [Logistic Regression](#3-logistic-regression-with-tensorflow)
+4. [Random Forest](#4-random-forest-with-tensorflow)
+5. [Gradient Boosted Trees](#5-gradient-boosted-trees)
+6. [Results and Conclusions](#6-results-and-conclusions)
 
 ##
 
