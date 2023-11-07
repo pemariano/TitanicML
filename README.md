@@ -4,7 +4,7 @@ Titanic predictions with Machine Learning comparing Logistic Regression, Random 
 
 Exploring the Kaggle Titanic Dataset to predict passengers survival.
 
-##
+---
 
 ### Summary
 
@@ -15,7 +15,7 @@ Exploring the Kaggle Titanic Dataset to predict passengers survival.
 5. [Gradient Boosted Trees](#5-gradient-boosted-trees)
 6. [Results and Conclusions](#6-results-and-conclusions)
 
-##
+---
 
 ### 1. The notebook starts with Exploratory Data Analysis (EDA) 
 
@@ -68,7 +68,7 @@ Check the notebook for the tables with these data.
 - Parch and their survival: In Parch=0 more people died (2/3) for others Parch's there is not much difference.
 - SibSp + Parch and their survival: In Parch=0 more people died (2/3) for others Parch's there is not much difference.
 
-##
+---
 
 ### 2. Now it's time for data preprocessing
 
@@ -77,7 +77,7 @@ Check the notebook for the tables with these data.
 - We also normalize the fare column by the Z-score
 - Family size could be a good feature instead of separated SibSp and Parch. Create a new column in the dataframe with the family size, SibSp + Parch.
 
-##
+---
 
 ### 3. Logistic Regression with TensorFlow
 
@@ -115,7 +115,7 @@ Good AUC, the model seems alright but could improve. \
 
 After submitting to Kaggle these predictions get an Score of 0.54545
 
-##
+---
 
 ### 4. Random Forest with TensorFlow
 
@@ -127,7 +127,7 @@ Logloss and accuracy graph: \
 
 After submitting to Kaggle these predictions get an Score of 0.78708
 
-##
+---
 
 ### 5. Gradient Boosted Trees with TensorFlow
 
@@ -141,7 +141,7 @@ it seems to have an overfitting at 20 trees. The accuracy doesn't change much af
 
 After submitting to Kaggle these predictions get an Score of 0.78468 an ended up in place 1602 of 15192 people.
 
-##
+---
 
 ### 6. Results and Conclusions
 
