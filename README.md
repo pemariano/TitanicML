@@ -55,7 +55,7 @@ Data Dictionary *from kaggle*
 - None of the other distributions seem to indicate a clear line between the people that survived and those who didn't. In other words, do not show trends of people who survived in function of the features (or a relantionship between features and survived).
 
 #### We can also check correlations with Seaborn .heatmap():
-![correlations](https://github.com/pemariano/TitanicML/assets/85647121/12021856-c9eb-415c-b277-c776139d9326)
+![correlations](https://github.com/pemariano/TitanicML/assets/85647121/855428a7-5489-493f-bf3e-90471344290b)
 - We dont have much correlation in the dataset, the most useful one is the 0.34 in Survived x Pclass (ticket class) and it's not great.
 
 
